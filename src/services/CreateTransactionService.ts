@@ -15,13 +15,16 @@ class CreateTransactionService {
   }
 
   public async execute({ title, value, type }: Request): Promise<Transaction> {
+    if (type === 'outcome') {
+      const { total: balance } = this.transactionsRepository.getBalance();
+      if (balance - value < 0) throw Error('Not enought money...');
+    }
     const transaction = this.transactionsRepository.create({
       title,
       value,
       type,
     });
     return transaction;
-    //TODO: execute on CreateTransactionServide
   }
 }
 
