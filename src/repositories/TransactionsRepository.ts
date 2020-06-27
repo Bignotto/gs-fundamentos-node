@@ -14,15 +14,18 @@ class TransactionsRepository {
   }
 
   public all(): Transaction[] {
-    // TODO
+    return this.transactions;
   }
 
   public getBalance(): Balance {
-    // TODO
+    //TODO: getBalance() on Transaction Repository
+    //sum all outcame
+    //sum all income
+    //subtract outcome from income
   }
 
   public create(): Transaction {
-    // TODO
+    //TODO: create() on Transaction Repository
   }
 }
 
