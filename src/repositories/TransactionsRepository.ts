@@ -21,6 +21,7 @@ class TransactionsRepository {
   public getBalance(): Balance {
     //TODO: getBalance() on Transaction Repository
     //sum all outcame
+    const incomeToSum = this.transactions.filter(transaction => {});
     //sum all income
     //subtract outcome from income
   }
